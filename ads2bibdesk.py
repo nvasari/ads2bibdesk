@@ -90,6 +90,25 @@ the ads python package's instruction)
     article_status=process_article(args ,prefs)
 
 
+def make_MNRAScitekey(author, year):
+    '''
+    Make MNRAS bibtex entry.
+    Adapted from Natalia's original version
+    '''
+    import unidecode
+
+    N_authors = len(author)
+    author_surnames = [a.split(',')[0] for a in author]
+
+    if (N_authors < 4):
+        MNRAScitekey = '.'.join(author_surnames) + f'.{year}'
+    else:
+        MNRAScitekey = author_surnames[0] + f'.etal.{year}'
+
+    MNRAScitekey = unidecode.unidecode(MNRAScitekey.replace('-', ''))
+
+    return MNRAScitekey
+
 def process_article(args, prefs):
     """
     """
@@ -222,6 +241,10 @@ def process_token(article_identifier, prefs, bibdesk):
     
     # pub id
     pub = pub.descriptorAtIndex_(1).descriptorAtIndex_(3).stringValue()
+    
+    # Get MnrasCitekey
+    MNRAScitekey = make_MNRAScitekey(ads_article.author, ads_article.year)
+    bibdesk(f'set value of field "Mnrascitekey" to "{MNRAScitekey}"', pub)
     
     # automatic cite key
     bibdesk('set cite key to generated cite key', pub)
