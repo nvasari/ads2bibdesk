@@ -196,7 +196,10 @@ def process_token(article_identifier, prefs, bibdesk):
     else:
         pdf_filename='.null'
 
-        
+    # Remove ADS keywords?
+    if 'true' in prefs['options']['remove_keywords'].lower():
+        import re
+        ads_bibtex = re.sub(".*keywords.*\n?","", ads_bibtex)
         
     kept_pdfs = []
     kept_fields = {}
