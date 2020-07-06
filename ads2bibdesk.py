@@ -105,7 +105,7 @@ def make_MNRAScitekey(author, year):
     else:
         MNRAScitekey = author_surnames[0] + f'.etal.{year}'
 
-    MNRAScitekey = unidecode.unidecode(MNRAScitekey.replace('-', ''))
+    MNRAScitekey = unidecode.unidecode(MNRAScitekey.replace('-', '').replace(' ', ''))
 
     return MNRAScitekey
 
