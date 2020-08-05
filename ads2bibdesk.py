@@ -114,6 +114,10 @@ def process_article(args, prefs):
     """
 
     bibdesk = BibDesk()
+
+    # Accept URLs and extract identifier from them (does not work with DOIs)
+    if args.article_identifier.startswith('http'): 
+        args.article_identifier = args.article_identifier.split('/')[-1]
     
     article_status=process_token(args.article_identifier, prefs, bibdesk)
     
