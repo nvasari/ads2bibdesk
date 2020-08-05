@@ -59,7 +59,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>COMMAND_STRING</key>
-					<string>ads2bibdesk "$1"</string>
+					<string>/usr/local/Anaconda3/bin/ads2bibdesk "$1"</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
 					<key>inputMethod</key>
@@ -68,6 +68,21 @@
 					<string>/bin/bash</string>
 					<key>source</key>
 					<string></string>
+				</dict>
+				<key>ActionRuntimeParameters</key>
+				<dict>
+					<key>COMMAND_STRING</key>
+					<string>/usr/local/Anaconda3/bin/ads2bibdesk "$1"</string>
+					<key>CheckedForUserDefaultShell</key>
+					<true/>
+					<key>inputMethod</key>
+					<integer>1</integer>
+					<key>shell</key>
+					<string>/bin/bash</string>
+					<key>source</key>
+					<string></string>
+					<key>temporary items path</key>
+					<string>/var/folders/dt/r7yffgw566sbh9xkpxfsp2qm0000gn/T/A9490B07-8213-4EFF-A236-3AF454116E44/1/com.apple.RunShellScript</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.RunShellScript</string>
@@ -244,7 +259,7 @@
 		<key>minorSplitViewState</key>
 		<dict>
 			<key>expandedPosition</key>
-			<real>143.0</real>
+			<real>143</real>
 			<key>subviewState</key>
 			<array>
 				<string>0.000000, 0.000000, 1007.000000, 629.000000, NO</string>
